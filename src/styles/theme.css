@@ -2,101 +2,167 @@
 
 :root {
   --font-size: 16px;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
-  --background: #f9fafb;
-  --foreground: #0a1b33;
-  --card: #ffffff;
-  --card-foreground: #0a1b33;
-  --popover: #ffffff;
-  --popover-foreground: #0a1b33;
-  --primary: #0a152d;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Fustat", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --background: #ffffff;
+  --foreground: #050814;
+  --ink: #080b12;
+  --foreground-body: #101828;
+  --label: #344054;
+
+  --brand: #0084ff;
+  --brand-hover: #0074e0;
+  --brand-foreground: #ffffff;
+
+  --primary: #050814;
+  --primary-hover: #121724;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0a1b33;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #e2e8f0;
-  --accent-foreground: #0a1b33;
+
+  --muted: #f8f9fc;
+  --muted-foreground: #667085;
+  --subtle-foreground: #94a3b8;
+
+  --surface: #f8f9fc;
+  --canvas: #f8f9fc;
+  --card: rgba(255, 255, 255, 0.84);
+  --card-foreground: #050814;
+
+  --popover: #ffffff;
+  --popover-foreground: #050814;
+
+  --secondary: #f1f3f6;
+  --secondary-foreground: #050814;
+
+  --accent: #f8f9fc;
+  --accent-foreground: #050814;
+
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: rgba(148, 163, 184, 0.3);
+
+  --success: #22c55e;
+  --success-muted: #ecfdf3;
+  --success-emphasis: #166534;
+  --warning: #f59e0b;
+  --warning-muted: #fff7e6;
+  --warning-emphasis: #b45309;
+
+  --border: rgba(0, 0, 0, 0.1);
   --input: transparent;
-  --input-background: #f8fafc;
+  --input-background: #f8f9fc;
   --switch-background: #cbd5e1;
+  --ring: #0084ff;
+
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #0a152d;
-  --chart-1: #3b82f6;
+
+  --chart-1: #0084ff;
   --chart-2: #8b5cf6;
   --chart-3: #06b6d4;
-  --chart-4: #10b981;
+  --chart-4: #22c55e;
   --chart-5: #f59e0b;
+
   --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #050814;
+  --sidebar-primary: #0084ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8f9fc;
+  --sidebar-accent-foreground: #050814;
+  --sidebar-border: rgba(0, 0, 0, 0.1);
+  --sidebar-ring: #0084ff;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: #050814;
+  --foreground: #f8f9fc;
+  --ink: #ffffff;
+  --foreground-body: #e2e8f0;
+  --label: #cbd5e1;
+
+  --brand: #3b9eff;
+  --brand-hover: #0084ff;
+  --brand-foreground: #ffffff;
+
+  --primary: #f8f9fc;
+  --primary-hover: #e2e8f0;
+  --primary-foreground: #050814;
+
+  --muted: #101828;
+  --muted-foreground: #94a3b8;
+  --subtle-foreground: #64748b;
+
+  --surface: #101828;
+  --canvas: #080b12;
+  --card: rgba(16, 24, 40, 0.84);
+  --card-foreground: #f8f9fc;
+
+  --popover: #101828;
+  --popover-foreground: #f8f9fc;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #f8f9fc;
+
+  --accent: #1e293b;
+  --accent-foreground: #f8f9fc;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --input: #1e293b;
+  --input-background: #101828;
+  --ring: #3b9eff;
+
+  --sidebar: #101828;
+  --sidebar-foreground: #f8f9fc;
+  --sidebar-primary: #3b9eff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8f9fc;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3b9eff;
 }
 
 @theme inline {
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-foreground-body: var(--foreground-body);
+  --color-label: var(--label);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-foreground: var(--brand-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-success-emphasis: var(--success-emphasis);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-warning-emphasis: var(--warning-emphasis);
+  --color-surface: var(--surface);
+  --color-canvas: var(--canvas);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-input-background: var(--input-background);
@@ -127,56 +193,24 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
   }
-
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
 
   html {
     font-size: var(--font-size);
   }
 
-  h1 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  h4 {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  label {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
+  h1,
+  h2,
+  h3,
+  h4,
+  label,
   button {
-    font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   input {
-    font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
