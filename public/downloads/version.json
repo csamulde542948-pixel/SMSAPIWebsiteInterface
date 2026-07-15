@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "app_id": "com.opensms.gateway",
+  "display_name": "OpenSMS Gateway",
+  "updated_at": "2026-07-11T00:00:00Z",
+  "channel": "sideload",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "pairing": {
+    "uri_scheme": "opensms",
+    "uri_host": "gateway-pair",
+    "ttl_minutes": 15,
+    "production_api_base_url": "https://api.opensms.cloud",
+    "staging_api_base_url": "https://opensms-api-render-staging.onrender.com"
+  },
+  "releases": {
+    "standard": {
+      "flavor": "standard",
+      "version_name": "1.0.0-standard",
+      "version_code": 5010,
+      "supports_inbound": false,
+      "artifact": "app-standard-release.apk",
+      "download_path": "https://opensms-downloads.onrender.com/opensms-gateway-1.0.0-standard.apk",
+      "download_filename": "opensms-gateway-1.0.0-standard.apk",
+      "notes": "Send-only gateway. Use for OTP, transactional, and marketing outbound."
+    },
+    "two_way": {
+      "flavor": "twoWay",
+      "version_name": "1.0.0-two-way",
+      "version_code": 5020,
+      "supports_inbound": true,
+      "artifact": "app-twoWay-release.apk",
+      "download_path": "https://opensms-downloads.onrender.com/opensms-gateway-1.0.0-two-way.apk",
+      "download_filename": "opensms-gateway-1.0.0-two-way.apk",
+      "notes": "Send + forward new inbound replies. Requires two-way signed build and RECEIVE_SMS."
+    }
+  },
+  "changelog": [
+    {
+      "date": "2026-07-11",
+      "version_name": "1.0.0-two-way",
+      "version_code": 5020,
+      "flavor": "two_way",
+      "changes": [
+        "Two-way sideload build with inbound SMS forwarding.",
+        "Requires RECEIVE_SMS; shares package id with standard build."
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "version_name": "1.0.0-standard",
+      "version_code": 5010,
+      "flavor": "standard",
+      "changes": [
+        "Initial public sideload build of the OpenSMS Android gateway.",
+        "Google sign-in, QR pairing, foreground service, and outbound SMS."
+      ]
+    }
+  ],
+  "logging": {
+    "event_store": "shared_preferences",
+    "event_prefs_name": "opensms_gateway_events",
+    "max_events": 150,
+    "fields": [
+      "id",
+      "occurred_at",
+      "category",
+      "title",
+      "detail",
+      "version_name",
+      "version_code",
+      "supports_inbound",
+      "debug"
+    ],
+    "support_hint": "Include version_name, version_code, flavor, and recent Monitor events when reporting issues."
+  },
+  "hosting": {
+    "recommended": [
+      "Render Static Site opensms-downloads (mobile-downloads/) for APK CDN",
+      "Firebase Hosting for SPA + /gateway-version.json catalog only"
+    ],
+    "render_static_site": true,
+    "render_service": "opensms-downloads",
+    "render_public_base_url": "https://opensms-downloads.onrender.com",
+    "firebase_hosting_apks_ignored": true,
+    "firebase_spark_blocks_apk": true,
+    "download_filename_format": "opensms-gateway-{versionName}.apk"
+  }
+}
