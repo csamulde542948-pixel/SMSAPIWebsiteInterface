@@ -3,13 +3,13 @@ export const LANDING_API_BASE = "https://api.opensms.cloud";
 export const LANDING_SUPPORT_EMAIL = "support@opensms.cloud";
 
 /**
- * Sideload APK CDN (Render Static Site).
- * Blueprint service: opensms-downloads → https://opensms-downloads.onrender.com
- * Optional custom domain: downloads.opensms.cloud
+ * Sideload APK CDN — served by the Render API at /downloads/*
+ * (sms-api/static/downloads). Primary: https://api.opensms.cloud/downloads
+ * Staging API also serves the same paths on its onrender host.
  */
 export const GATEWAY_APK_CDN_BASE =
   (import.meta.env.VITE_GATEWAY_APK_CDN_BASE as string | undefined)?.replace(/\/$/, "") ||
-  "https://opensms-downloads.onrender.com";
+  "https://api.opensms.cloud/downloads";
 
 /** Sideload APK for the OpenSMS Android gateway (standard / send-only). */
 export const GATEWAY_APK_VERSION_NAME = "1.0.0-standard";

@@ -20,7 +20,7 @@
       "version_code": 5010,
       "supports_inbound": false,
       "artifact": "app-standard-release.apk",
-      "download_path": "https://opensms-downloads.onrender.com/opensms-gateway-1.0.0-standard.apk",
+      "download_path": "https://api.opensms.cloud/downloads/opensms-gateway-1.0.0-standard.apk",
       "download_filename": "opensms-gateway-1.0.0-standard.apk",
       "notes": "Send-only gateway. Use for OTP, transactional, and marketing outbound."
     },
@@ -30,7 +30,7 @@
       "version_code": 5020,
       "supports_inbound": true,
       "artifact": "app-twoWay-release.apk",
-      "download_path": "https://opensms-downloads.onrender.com/opensms-gateway-1.0.0-two-way.apk",
+      "download_path": "https://api.opensms.cloud/downloads/opensms-gateway-1.0.0-two-way.apk",
       "download_filename": "opensms-gateway-1.0.0-two-way.apk",
       "notes": "Send + forward new inbound replies. Requires two-way signed build and RECEIVE_SMS."
     }
@@ -76,12 +76,14 @@
   },
   "hosting": {
     "recommended": [
-      "Render Static Site opensms-downloads (mobile-downloads/) for APK CDN",
+      "Primary: Render API web services serve /downloads/* (sms-api/static/downloads)",
+      "Optional: dedicated Static Site opensms-downloads (mobile-downloads/)",
       "Firebase Hosting for SPA + /gateway-version.json catalog only"
     ],
+    "render_api_downloads": true,
+    "render_public_base_url": "https://api.opensms.cloud/downloads",
     "render_static_site": true,
     "render_service": "opensms-downloads",
-    "render_public_base_url": "https://opensms-downloads.onrender.com",
     "firebase_hosting_apks_ignored": true,
     "firebase_spark_blocks_apk": true,
     "download_filename_format": "opensms-gateway-{versionName}.apk"
